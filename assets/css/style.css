@@ -1,6 +1,50 @@
 :root{
+  --box-shadow: 0px 0px 10px 0px rgba(66, 70, 73, 0.377);
+  --light-grey-color: rgb(228, 228, 228);
+  --theme-color: #FF676C;
+  --font-family:    
   font-size: 16px;
 }
 body{
+  --size-headings: 2.2rem;
+}
+*{
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
+}
+.cardsHeading{
+  margin-top: 7vh;
+  margin-bottom: 5vh;
+  text-align: center;
+  font-size: var(--size-headings);
+}
+
+
+.choosedList{
+  display: block;
+  width: 80vw;
+  margin-top: 5vh;
+  margin-bottom: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1.5rem;
+  text-align: center; 
+  box-shadow: var(--box-shadow);    
+  list-style: none;
+}
+.choosedList>*:not(.choosedListHeading){
+  margin-bottom: 0.3rem;
+  padding-left: 2rem;
+  text-align: left;
+}
+.choosedListHeading{
+  margin-bottom: 1rem;
+  font-size: var(--size-headings);
+}
+.themeColorText{
+  color: var(--theme-color);
+}
+.uppercase{
+    text-transform: uppercase;
 }
