@@ -10,9 +10,12 @@ messagesClasses.set('www.facebook.com', 'fab fa-facebook');
 messagesClasses.set('www.instagram.com', 'fab fa-instagram');
 
 
-fetch('./assets/js/data.json').then((response)=> response.json()).then((actors)=>{
-  actors.map((actor)=>actorsList.append(createCard(actor)));
+fetch('./assets/js/data.json').then((response)=> response.json())
+  .then((actors)=>{actors.map((actor)=>actorsList.append(createCard(actor)));
 })
+  .catch((e)=>{
+    actorsList.append(createElement('h2', {classNames:['initials','cardName','error'],styleProreties:{color: 'var(--theme-color)'}}, document.createTextNode('Error. Please, try again later')))
+    throw e});
 
 
 function createCard(actor){
@@ -72,8 +75,7 @@ function clickHanler({currentTarget:{dataset:{id,fullName}}}){
   }
 }
 
-function handlerImageError({target}){
-  console.log(target);
+function handlerImageError({target}){  
   target.remove();
 }
 
